@@ -1,0 +1,127 @@
+<div class="row">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Spartabook</a>
+      <textarea rows="2" cols="100" placeholder="search spartabook"></textarea>
+    </div>
+    <div>
+   <!--   <ul class="nav navbar-nav">
+        <li class="list-group-item active"><a href="#">Home</a></li>
+        <li class="list-group-item active"><a href="#">{{fname}}</a></li>
+       
+      </ul>-->
+      <ul class="nav navbar-nav">
+  <li ui-sref-active="active"><a ui-sref="self_profile">Home</a></li>
+  
+  <li ui-sref-active="active"><a ui-sref="self_profile">{{fname}} {{lname}}</a></li>
+     <li ui-sref-active="active"><a ui-sref="logout">Logout</a></li>
+</ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
+<p><a sref="self_profile">{{fname}}</a>
+<p><a sref="about_user">Edit profile</a></p>
+
+
+
+
+<div class="container" ng-controller="groupController" >
+  
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create group</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create and add members to the group</h4>
+          <br>
+          <br>
+        </div>
+        <div class="modal-body" >
+         <input type="text" placeholder="enter group name" ng-model="groupName"></input>
+         <div ng-repeat="friend in friends">
+           <div><p>{{friend.fname}}  {{friend.lname}}</p> <!--  <input type="button" mydir class="btn btn-primary"  ng-click="addMember(friend)" value="add"></input>  </div>-->
+         
+        <!--  <input type='checkbox' ng-init='checkStatus=true' ng-model='checkStatus' ng-click='addMember(checkStatus,friend)'></input>-->
+         
+         <input type='checkbox'  ng-click='addMember(friend)'>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="createGroup()">Create</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+  
+  
+  <div>Manage Groups</div>
+  <br><br>
+  <div ng-repeat="group in myGroups">
+   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myGroups">{{group.groupname}}</button><br><br>
+     <div class="modal fade" id="myGroups" role="dialog">
+     <div class="modal-dialog">
+     <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Manage {{group.groupname}}</h4>
+           <br>
+           <br>
+         
+  </div>
+  <div class="modal-body">
+    
+         
+      
+         <button type="button"  class="btn btn-primary" ng-click=getMembers(group)>View Members</button>
+       
+       <h3>Members of this group</h3>
+      <div ng-repeat="member in members">
+      <p>{{member.fname}} {{member.lname}}  <input type='checkbox'  ng-click='removeMember(member)'></p>
+        
+      </div>
+      <br>
+      <button type="button" data-dismiss="modal" class="btn btn-danger"  ng-click="deleteGroup(group)">Delete {{group.groupname}}</button>
+      
+      
+      
+       <div class="modal-footer">
+    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+    <button type="button"  data-dismiss="modal" class="btn btn-primary" ng-click="removeMembersFromGroup()">Remove Selected Memberes</button>
+  </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+
+  
+  
+  </div>
+</div>
+</div>
+ <div class="col-md-8" ng-controller="feedsController">
+<h1 class="bg-primary">News Feeds</h1>
+<div  class="div1" ng-repeat="feed in feeds">
+<div>{{feed.fname}} {{feed.lname}} updated her status at  {{feed.updateTime}}</div><br>
+<div>{{feed.post}}</div>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+

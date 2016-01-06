@@ -1,0 +1,101 @@
+<div class="row">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Spartanbook</a>
+      <textarea rows="2" cols="80" placeholder="search spartanbook"></textarea>
+    </div>
+    <div>
+   <!--   <ul class="nav navbar-nav">
+        <li class="list-group-item active"><a href="#">Home</a></li>
+        <li class="list-group-item active"><a href="#">{{fname}}</a></li>
+       
+      </ul>-->
+      <ul class="nav navbar-nav">
+   
+  <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+  
+  <li ui-sref-active="active"><a ui-sref="self_profile">{{fname}}}}</a></li>
+       <li ng-controller="friendRequests" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  >Friend Requests <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          
+            <li ng-repeat="request in requests"><a href="#">{{request.fname}} {{request.lname}}</a><input type ="button" class="btn btn-primary" value="accept" ng-click="acceptFriend(request)"></input></li>
+           
+          </ul>
+      <li ui-sref-active="active"><a ui-sref="logout">Logout</a></li>
+  
+  
+</ul>
+    </div>
+  </div>
+</nav>
+</div><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+<div class="col-md-4">
+<div ng-controller="fetchInfoController">
+<p><span class="glyphicon glyphicon-lock"></span>Works at:{{work}}</p> <br>
+<p><span class="glyphicon glyphicon-education"></span>Studies at:{{study}}</p><br>
+<p><span class="glyphicon glyphicon-book"></span>Likes music:{{music}}</p></br>
+<p><span class="glyphicon glyphicon-book"></span>Likes sports:{{sports}}</p></br>
+</div>
+<div ng-controller="viewFriends">
+
+  <input type="button" class="btn btn-primary" value="view friends" ng-click="viewfriends()"></input>
+<div ng-repeat="friend in friends">
+<p>{{friend.fname}} {{friend.lname}}</p>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    
+    <div>
+      <ul class="nav navbar-nav">
+      
+      
+        <li  class="active"><a ui-sref=".status">Update Status</a></li>
+      
+         <li   class=" active "><a ui-sref=".life_event">Add Life Event</a></li>
+         
+       
+         <li  class="active"><a ui-sref=".add_friends">Add friends</a>
+        
+      
+      
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div ui-view></div>
+<div ng-controller="fetchInfoController">
+<div  class="div1" ng-repeat="update in updates">
+
+<div>{{fname}} {{lname}} updated her status.{{update.time}}</div>
+<br><br>
+<div>{{update.post}} </div>
+</div>
+</div>
+<br><br><br>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

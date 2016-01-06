@@ -1,0 +1,86 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../resources/fb.png") ;
+}
+
+a {
+  color:#3180b5 ;
+}
+
+
+.list-inline {
+  white-space:nowrap;
+}
+
+  
+
+
+
+.ulf {
+    width: 1500px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+}
+.lif{
+    float: left;
+}
+ #container {
+    width: 1000px;
+    background-color: white;
+    overflow: auto;
+    height: 100px;
+    white-space: nowrap;
+}
+
+.contents {
+    width: 150px;
+    height: 200px;
+    display: inline-block;
+}
+
+        
+.navbar {
+
+background-color:#3180b5;
+background-image: none;
+border:none;
+color:white;
+}
+ul.nav.nav-navbar-nav > li.active {
+	background-color:#3180b5;
+    color: white;
+}
+
+nav>navbar-nav
+{
+	
+	background-color:#3180b5;
+background-image: none;
+border:none;
+color:white;
+}
+
+.navbar.navbar-inverse 
+{
+	background-color:#3180b5;
+    color: white;
+	
+}
+
+.navbar-inverse { background-color: #3180B5}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #3180B5}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #3180B5}
+
+.navbar-inverse { border-color: #080808}
+.navbar-inverse .navbar-brand { color: #FFFFFF}
+
+.navbar-inverse .navbar-nav>li>a { color: #ffffff}
+.div1{
+background-color: white;
+    width: 500px;
+    height: 130px;
+    padding: 25px;
+    border: 2px solid lightgrey;
+}
